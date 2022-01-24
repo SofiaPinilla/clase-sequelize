@@ -3,7 +3,7 @@ const {Op}= Sequelize;
 
 const PostController = {
     create(req, res) {
-        Post.create({...req.body })
+        Post.create({...req.body,UserId: req.user.id })
             .then(post => res.status(201).send({ message: 'Publicación creada con éxito', post }))
             .catch(console.error)
     },
