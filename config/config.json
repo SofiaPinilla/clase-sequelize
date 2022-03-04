@@ -4,7 +4,8 @@
     "password": "123456",
     "database": "database_sequelize",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "jwt_secret":"mimamamemima"
   },
   "test": {
     "username": "root",

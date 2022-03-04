@@ -6,11 +6,11 @@ const { Op } = Sequelize;
 
 const UserController = {
   create(req, res) {
-    if (/^[a-zA-Z]\w{3,14}$/i.test(req.body.password) !== true) {
-      return res.send(
-        "El primer carácter de la contraseña debe ser una letra, debe contener al  menos 4 caracteres y no más de 15 caracteres y no se pueden usar más  caracteres que letras, números y guiones bajos."
-      );
-    }
+    // if (/^[a-zA-Z]\w{3,14}$/i.test(req.body.password) !== true) {
+    //   return res.send(
+    //     "El primer carácter de la contraseña debe ser una letra, debe contener al  menos 4 caracteres y no más de 15 caracteres y no se pueden usar más  caracteres que letras, números y guiones bajos."
+    //   );
+    // }
     req.body.rol = "user";
     const hash = bcrypt.hashSync(req.body.password, 10);
     User.create({ ...req.body, password: hash })
